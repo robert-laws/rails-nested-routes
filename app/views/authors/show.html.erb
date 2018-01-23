@@ -1,0 +1,12 @@
+<h1>Author</h1>
+
+<p>
+  <h4>Name: <%= @author.name %></h4>
+  <hr>
+  <h4><%= link_to 'Books', author_books_path(@author.id) %></h4>
+  <ul>
+    <% @author.books.each do |book| %>
+      <li><%= book.title %></li>
+    <% end %>
+  </ul>
+</h4>
