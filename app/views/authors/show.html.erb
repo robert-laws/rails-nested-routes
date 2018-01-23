@@ -1,13 +1,15 @@
 <h1>Author</h1>
 
+<h4>Name: <%= @author.name %></h4>
+<p>Number of books written: <%= @author.books.count %></p>
+<hr>
+<h4><%= link_to 'Books', author_books_path(@author.id) %></h4>
+<ul>
+  <% @author.books.each do |book| %>
+    <li><%= book.title %></li>
+  <% end %>
+</ul>
+<hr>
 <p>
-  <h4>Name: <%= @author.name %></h4>
-  <p>Number of books written: <%= @author.books.count %></p>
-  <hr>
-  <h4><%= link_to 'Books', author_books_path(@author.id) %></h4>
-  <ul>
-    <% @author.books.each do |book| %>
-      <li><%= book.title %></li>
-    <% end %>
-  </ul>
-</h4>
+  <%= link_to 'Add a new book', new_author_book_path(@author) %>
+</p>

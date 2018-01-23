@@ -1,7 +1,15 @@
 <h1>Books</h1>
-
+<% if flash[:alert] %>
+  <div id="alert">
+    <%= flash[:alert] %> 
+  </div>
+<% end %>
 <ul>
   <% @books.each do |book| %>
     <li><%= link_to book.title, author_book_path(book.author.id, book.id) %></li>
   <% end %>
 </ul>
+<hr>
+<p>
+  <%= link_to "Add a new book", new_book_path %>
+</p>

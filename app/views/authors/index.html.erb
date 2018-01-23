@@ -1,4 +1,9 @@
 <h1>Authors</h1>
+<% if flash[:alert] %>
+  <div id="alert">
+    <%= flash[:alert] %> 
+  </div>
+<% end %>
 <ul>
   <% @authors.each do |author| %>
     <li><%= link_to author.name, author_path(author.id) %></li>

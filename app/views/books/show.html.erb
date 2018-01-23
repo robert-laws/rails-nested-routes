@@ -2,4 +2,4 @@
 
 <p>Title: <%= @book.title %></p>
 
-<p>Author: <%= @book.author.name %></p>
+<p>Author: <%= link_to @book.author.name, author_path(@book.author) if @book.author %> (<%= link_to "Edit Book", edit_author_book_path(@book.author, @book) if @book.author %>)</p>
